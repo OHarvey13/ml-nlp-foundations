@@ -9,21 +9,21 @@ It covers:
 
 Goal: understand text representation, model limitations, and lay groundwork for neural networks and LLMs.
 
-ml-nlp-foundations/
-│── phase1_text_classification/   # Classic ML experiments
-│   ├── notebooks/
-│   ├── data/
-│   └── README.md
-│
-│── phase2_neural_nets/           # Neural networks experiments
-│   ├── notebooks/
-│   ├── data/
-│   └── README.md
-│
-│── shared_utils/                 # Tokenizers, helper functions
-│
-├── requirements.txt
-└── README.md                     # This overview
+ml-nlp-foundations/  
+│── phase1_text_classification/   # Classic ML experiments    
+│   ├── notebooks/   
+│   ├── data/   
+│   └── README.md   
+│    
+│── phase2_neural_nets/           # Neural networks experiments  
+│   ├── notebooks/  
+│   ├── data/  
+│   └── README.md  
+│  
+│── shared_utils/                 # Tokenizers, helper functions   
+│  
+├── requirements.txt  
+└── README.md                     # This overview  
 
 # Requirements
 - Python >= 3.10
