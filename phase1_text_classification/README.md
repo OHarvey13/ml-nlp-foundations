@@ -1,20 +1,11 @@
 ## Notes - This README.md is strictly for my notes. It may be unorganized for viewers
 
-### Libraries 
-    - CountVectorizer (BoW): converts text into a matrix of word counts — basically, how often each word appears in each document.
-    - TfidfVectorizer: converts text into a weighted matrix that considers both word frequency and how rare the word is across all documents. Rare but important words get higher weight.
-    -Why needed: Machine learning models can’t understand raw text, they need numbers.
-
-    - Note for README:
-    - BoW = counts only (simple)
-    - TF-IDF = counts weighted by importance (better for distinguishing documents)
-    - MultinomialNB (Naive Bayes):
-        - Probabilistic model.
-        - Assumes each word occurs independently given the class.
-        - Good for text classification because it works with word counts (multinomial distribution).
-        - Fast and works well even if the independence assumption is not true.
-    -Logistic Regression:
-        - Linear model that predicts the probability of each class.
-        - Optimizes cross-entropy loss.
-        - Works well with high-dimensional sparse data (like TF-IDF).
-    Tip: Think Naive Bayes = fast & simple, Logistic Regression = slightly more flexible & powerful.
+💡 Memory tip: Think D → S → V → M → E → R when coding. Say it out loud while recalling the library/functions for each step.
+| Step             | Purpose                     | Library / Function                                   | Notes / Memory Tip                                                                   |
+| ---------------- | --------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **D: Dataset**   | Load data & labels          | `sklearn.datasets.fetch_20newsgroups`                | `data` = text, `target` = numeric labels, `target_names` = human-readable categories |
+| **S: Split**     | Train/test split            | `train_test_split`                                   | Prevent overfitting; `test_size=0.2`, set `random_state` for reproducibility         |
+| **V: Vectorize** | Convert text → numbers      | `CountVectorizer`, `TfidfVectorizer`                 | BoW = counts; TF-IDF = weighted; `fit_transform` on train, `transform` on test       |
+| **M: Model**     | Train classifiers           | `MultinomialNB`, `LogisticRegression(max_iter=1000)` | NB = fast & simple; LR = flexible & works well with TF-IDF                           |
+| **E: Evaluate**  | Check performance           | `accuracy_score`, `classification_report`            | Look at accuracy, precision, recall, F1 for each class                               |
+| **R: Reflect**   | Learn & observe limitations | N/A                                                  | BoW/TF-IDF ignore word order; NB ignores dependencies; sets baseline for neural nets |
